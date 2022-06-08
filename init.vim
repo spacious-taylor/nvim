@@ -21,7 +21,7 @@ set scrolloff=10
 set cursorline
 set noshowmode
 set showcmd
-set listchars=eol:↵,tab:\¦\ ,trail:▓,extends:>,precedes:<,space:·
+set listchars=eol:↵,tab:\|\ ,trail:▓,extends:>,precedes:<,space:·
 set list
 
 " filetype

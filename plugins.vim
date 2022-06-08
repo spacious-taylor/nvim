@@ -57,8 +57,5 @@ let g:vim_markdown_folding_disabled=1
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#buffer_nr_show=1
 
-" indentLine
-let g:indentLine_char = '▏'
-
 " lsp setup
 lua require('lsp')
