@@ -23,7 +23,9 @@ nnoremap <leader>fw :Windows<cr>
 
 " buffer
 nnoremap ,bj :bn<cr>
+nnoremap ,bn :bn<cr>
 nnoremap ,bk :bp<cr>
+nnoremap ,bp :bp<cr>
 nnoremap ,bd :bd<cr>
 
 " terminal
