@@ -22,11 +22,11 @@ nnoremap <leader>fm :Marks<cr>
 nnoremap <leader>fw :Windows<cr>
 
 " buffer
-nnoremap ,bj :bn<cr>
-nnoremap ,bn :bn<cr>
-nnoremap ,bk :bp<cr>
-nnoremap ,bp :bp<cr>
-nnoremap ,bd :bd<cr>
+nnoremap <leader>bj :bn<cr>
+nnoremap <leader>bn :bn<cr>
+nnoremap <leader>bk :bp<cr>
+nnoremap <leader>bp :bp<cr>
+nnoremap <leader>bd :bd<cr>
 
 " terminal
 nnoremap <leader>to :FloatermToggle<cr>
