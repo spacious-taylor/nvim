@@ -22,10 +22,8 @@ nnoremap <leader>fm :Marks<cr>
 nnoremap <leader>fw :Windows<cr>
 
 " buffer
-nnoremap <leader>bj :bn<cr>
-nnoremap <leader>bn :bn<cr>
-nnoremap <leader>bk :bp<cr>
-nnoremap <leader>bp :bp<cr>
+nnoremap gb :bn<cr>
+nnoremap gB :bp<cr>
 nnoremap <leader>bd :bd<cr>
 nnoremap :q<cr> :bd<cr>
 
