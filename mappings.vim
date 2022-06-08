@@ -27,6 +27,7 @@ nnoremap <leader>bn :bn<cr>
 nnoremap <leader>bk :bp<cr>
 nnoremap <leader>bp :bp<cr>
 nnoremap <leader>bd :bd<cr>
+nnoremap :q<cr> :bd<cr>
 
 " terminal
 nnoremap <leader>to :FloatermToggle<cr>
