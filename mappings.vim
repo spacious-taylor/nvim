@@ -24,8 +24,8 @@ nnoremap <leader>fw :Windows<cr>
 " buffer
 nnoremap gb :bn<cr>
 nnoremap gB :bp<cr>
-nnoremap <leader>bd :bd<cr>
 nnoremap :q<cr> :bd<cr>
+nnoremap :q!<cr> :bd!<cr>
 
 " terminal
 nnoremap <leader>to :FloatermToggle<cr>
