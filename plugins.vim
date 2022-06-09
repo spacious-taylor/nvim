@@ -10,14 +10,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" display
-Plug 'joshdick/onedark.vim'             " theme
-Plug 'vim-airline/vim-airline'          " status line
-Plug 'Yggdroot/indentLine'              " indent level
-Plug 'junegunn/rainbow_parentheses.vim' " brackets
-Plug 'kshenoy/vim-signature'            " mark indicator
-Plug 'voldikss/vim-floaterm'            " terminal
-
 " movement
 Plug 'easymotion/vim-easymotion'
 
@@ -40,6 +32,15 @@ Plug 'airblade/vim-localorie' " translation file navigation
 " markdown
 Plug 'preservim/vim-markdown' " syntax highlight
 Plug 'shime/vim-livedown'     " markdown live server
+
+" display
+Plug 'joshdick/onedark.vim'             " theme
+Plug 'vim-airline/vim-airline'          " status line
+Plug 'Yggdroot/indentLine'              " indent level
+Plug 'junegunn/rainbow_parentheses.vim' " brackets
+Plug 'kshenoy/vim-signature'            " mark indicator
+Plug 'voldikss/vim-floaterm'            " terminal
+Plug 'ryanoasis/vim-devicons'           " icon
 
 call plug#end()
 
