@@ -24,6 +24,7 @@ nnoremap <leader>fw :Windows<cr>
 " buffer
 nnoremap <expr> gb ':<C-U>' . v:count1 . 'bn<cr>'
 nnoremap <expr> gB ':<C-U>' . v:count1 . 'bp<cr>'
+nnoremap <expr> <leader>b ':<C-U>' . v:count1 . 'b<cr>'
 nnoremap <leader>q :bd<cr>
 
 " terminal
