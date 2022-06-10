@@ -22,10 +22,9 @@ nnoremap <leader>fm :Marks<cr>
 nnoremap <leader>fw :Windows<cr>
 
 " buffer
-nnoremap gb :bn<cr>
-nnoremap gB :bp<cr>
-nnoremap :q<cr> :bd<cr>
-nnoremap :q!<cr> :bd!<cr>
+nnoremap <expr> gb ':<C-U>' . v:count1 . 'bn<cr>'
+nnoremap <expr> gB ':<C-U>' . v:count1 . 'bp<cr>'
+nnoremap <leader>q :bd<cr>
 
 " terminal
 nnoremap <leader>to :FloatermToggle<cr>
