@@ -14,6 +14,7 @@ Plug 'preservim/nerdcommenter'                    " comment
 Plug 'airblade/vim-gitgutter'                     " git
 
 " development: rails
+Plug 'vim-ruby/vim-ruby'                          " ruby
 Plug 'tpope/vim-rails'                            " rails
 Plug 'airblade/vim-localorie'                     " rails locale
 
@@ -34,7 +35,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'    " colors on nerdtree
 Plug 'easymotion/vim-easymotion'                  " jump to target easily
 
 " display
-Plug 'morhetz/gruvbox'                            " colorscheme
+Plug 'arcticicestudio/nord-vim'                   " colorscheme
 Plug 'vim-airline/vim-airline'                    " status line
 Plug 'Yggdroot/indentLine'                        " indent guide
 Plug 'kshenoy/vim-signature'                      " show mark position
@@ -72,6 +73,7 @@ set laststatus=2
 set scrolloff=10
 set sidescrolloff=10
 set listchars+=eol:↵,tab:▶\ ,trail:▓,space:·
+set shortmess=
 set list
 set number
 set relativenumber
@@ -106,28 +108,48 @@ filetype plugin indent on
 " key behaviour
 set backspace=indent,eol,start
 
+" fold
+set foldcolumn=1
+
 
 """"""""""""""""""
 " Plugin Options "
 """"""""""""""""""
 
-" gruvbox
-let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+" nord
+colorscheme nord
 
 " airline
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.modified = ' ●'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#show_buffers=1
 let g:airline#extensions#tabline#buffer_nr_show=1
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+let g:airline_skip_empty_sections = 1
 
 " indentLine
 let g:indentLine_defaultGroup='SpecialKey'
+let g:vim_json_conceal=0
+let g:markdown_syntax_conceal=0
 
 " rainbow_parentheses
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+let g:rainbow#pairs=[['(', ')'], ['[', ']'], ['{', '}']]
 
 " fzf
-let g:fzf_layout = {'window': {'width': 0.9, 'height': 0.9}}
+let g:fzf_layout={'window': {'width': 0.9, 'height': 0.9}}
+
+" vim-ruby
+let ruby_fold=1
 
 
 """"""""""
@@ -173,3 +195,14 @@ function! WrapRegion() range
 endfunction
 
 vnoremap <leader>wr :call WrapRegion()<cr>
+
+
+"""""""""""""""
+" Autocommand "
+"""""""""""""""
+
+augroup initialize
+  autocmd!
+  " localorie
+  autocmd CursorMoved *.yml echo localorie#expand_key()
+augroup end
