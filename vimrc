@@ -1,5 +1,6 @@
 " Maintainer: Tin-Lok Law (@tllaw)
 
+
 """"""""""
 " Plugin "
 """"""""""
@@ -31,15 +32,18 @@ Plug 'preservim/nerdtree'                         " file explorer
 Plug 'Xuyuanp/nerdtree-git-plugin'                " git on nerdtree
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'    " colors on nerdtree
 
+" session
+Plug 'thaerkh/vim-workspace'                      " session manager
+
 " motion
 Plug 'easymotion/vim-easymotion'                  " jump to target easily
 
 " display
-Plug 'arcticicestudio/nord-vim'                   " colorscheme
+Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'                    " status line
 Plug 'Yggdroot/indentLine'                        " indent guide
 Plug 'kshenoy/vim-signature'                      " show mark position
-Plug 'junegunn/rainbow_parentheses.vim'           " rainbow parentheses
+Plug 'luochen1990/rainbow'                        " rainbow parentheses
 Plug 'ryanoasis/vim-devicons'                     " icons
 
 call plug#end()
@@ -72,6 +76,7 @@ set background=dark
 set laststatus=2
 set scrolloff=10
 set sidescrolloff=10
+set foldlevel=2
 set listchars+=eol:↵,tab:▶\ ,trail:▓,space:·
 set shortmess=
 set list
@@ -116,8 +121,8 @@ set foldcolumn=1
 " Plugin Options "
 """"""""""""""""""
 
-" nord
-colorscheme nord
+" gruvbox
+colorscheme gruvbox
 
 " airline
 if !exists('g:airline_symbols')
@@ -143,13 +148,20 @@ let g:vim_json_conceal=0
 let g:markdown_syntax_conceal=0
 
 " rainbow_parentheses
-let g:rainbow#pairs=[['(', ')'], ['[', ']'], ['{', '}']]
+let g:rainbow_active = 1
 
 " fzf
 let g:fzf_layout={'window': {'width': 0.9, 'height': 0.9}}
 
 " vim-ruby
 let ruby_fold=1
+
+" vim-workspace
+let g:workspace_autocreate = 1                                " auto create session
+let g:workspace_session_directory = $HOME . '/.vim/sessions/' " session dir
+let g:workspace_undodir = $HOME . '/.vim/undodir/'            " undo dir
+let g:workspace_autosave = 0                                  " don't autosave file
+let g:workspace_create_new_tabs = 0                           " use buffer instead of tab
 
 
 """"""""""
@@ -181,8 +193,8 @@ nnoremap <leader>vv :Vista coc<cr>
 " localorie
 nnoremap <leader>lt :call localorie#translate()<cr>
 
-" rainbow_parentheses
-nnoremap <leader>rp :RainbowParentheses<cr>
+" rainbow
+nnoremap <leader>rt :RainbowToggle<cr>
 
 " coc
 nnoremap <leader>ld <plug>(coc-definition)
