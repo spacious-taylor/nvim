@@ -87,6 +87,7 @@ set scrolloff=10
 set sidescrolloff=10
 set foldlevel=2
 set listchars+=eol:↵,tab:▶\ ,trail:▓,space:·
+set belloff=all
 set shortmess=
 set list
 set number
@@ -125,6 +126,8 @@ set backspace=indent,eol,start
 " fold
 set foldcolumn=1
 
+" tags file
+set tags=./tags;
 
 """"""""""""""""""
 " Plugin Options "
